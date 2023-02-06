@@ -28,7 +28,7 @@ namespace DemoCraftSpring2023
             string output = $"Inventory items for {Name}:\n";
             foreach(Item i in Inventory)
             {
-                output += $"{i.Name}{Environment.NewLine}";
+                output += $"{i.Amount} of {i.Name}{Environment.NewLine}";
             }
 
             return output;

@@ -40,6 +40,7 @@ namespace DemoCraftSpring2023
 
             Print(playerOne.ShowInventoryItems());
             Print(playerTwo.ShowInventoryItems());
+           
 
             Console.ReadKey();
 

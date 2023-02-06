@@ -5,7 +5,7 @@ using System.Text;
 
 namespace DemoCraftSpring2023
 {
-    public class CraftingTable
+    public class CraftingTable 
     {
 
         public CraftingTable()
