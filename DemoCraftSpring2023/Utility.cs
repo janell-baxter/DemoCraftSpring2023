@@ -55,10 +55,8 @@ namespace DemoCraftSpring2023
                 string[] itemNames = File.ReadAllLines(path);
                 for(int i = 0; i<itemNames.Length; i+=2)
                 {
-                   
                     bool success = double.TryParse(itemNames[i+1], out double amount);
                     items.Add(new Item() {Name = itemNames[i], Amount = amount  });
-                    
                 }
             }
             return items;

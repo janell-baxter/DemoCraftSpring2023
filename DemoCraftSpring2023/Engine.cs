@@ -36,10 +36,12 @@ namespace DemoCraftSpring2023
 
             Print($"I paid {price.ToString("c")} for this coffee");
             Print($"My name is {playerOne.Name}", playerOne);
-            Print($"My name is {playerTwo.Name}", playerTwo);
+           
 
-            Print(playerOne.ShowInventoryItems());
-            Print(playerTwo.ShowInventoryItems());
+            Print(playerOne.ShowInventoryItems(), playerOne);
+
+            Print($"My name is {playerTwo.Name}", playerTwo);
+            Print(playerTwo.ShowInventoryItems(), playerTwo);
            
 
             Console.ReadKey();
