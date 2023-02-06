@@ -9,8 +9,8 @@ namespace DemoCraftSpring2023
 {
     internal class Engine
     {
-        Player player = new Player() {Name="janell", textColor= ConsoleColor.Magenta };
-        Player player1 = new Player() { Name = "Duncan", textColor = ConsoleColor.DarkGreen };
+        Player playerOne = new Player() {Name="janell", textColor= ConsoleColor.Magenta };
+        Player playerTwo = new Player() { Name = "Duncan", textColor = ConsoleColor.DarkGreen };
         
         CraftingTable craftingtable;
 
@@ -19,36 +19,21 @@ namespace DemoCraftSpring2023
             double price = 3.4567;
 
             Print("Hello world"); //setting up for a delegate later
-            Print("Hello " + player.Name); //concatenation
-            Console.WriteLine("Hello {0}", player.Name); //composite
-            Print($"Hello {player.Name}"); //interpolation
+            Print("Hello " + playerOne.Name); //concatenation
+            Console.WriteLine("Hello {0}", playerOne.Name); //composite
+            Print($"Hello {playerOne.Name}"); //interpolation
 
             Print($"I paid {price.ToString("c")} for this coffee");
-            Print($"My name is {player.Name}", player);
-            Print($"My name is {player1.Name}", player1);
+            Print($"My name is {playerOne.Name}", playerOne);
+            Print($"My name is {playerTwo.Name}", playerTwo);
 
-            if (ConvertLowerCase("HHello") == "hhello")
-            {
-
-            }
             Console.ReadKey();
-          
+
+            Print();
 
         }
 
-        //public string ConvertLowerCase(string message)
-        //{
-        //    return message.ToLower();
-        //}
-        public string ConvertLowerCase(string message) => message.ToLower();
-        private bool SearchText(string text, string searchTerm)
-        {
-            if (text.Contains(searchTerm))
-            {
-                return true;
-            }
-            return false;
-        }
+      
 
     }
 }
