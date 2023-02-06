@@ -14,8 +14,19 @@ namespace DemoCraftSpring2023
         
         CraftingTable craftingtable;
 
+        private void SetUpPlayers()
+        {
+            playerOne.Name = LoadTextFromTextFile("../../../data/playerOneName.txt");
+            playerTwo.Name = LoadTextFromTextFile("../../../data/playerTwoName.txt");
+
+            //load inventory items from file
+            playerOne.Inventory = LoadItemsFromTextFile("../../../data/playerInventory.txt");
+            playerTwo.Inventory = LoadItemsFromTextFile("../../../data/playerInventory.txt");
+        }
+
         public void Play()
         {
+            SetUpPlayers();
             double price = 3.4567;
 
             Print("Hello world"); //setting up for a delegate later
@@ -26,6 +37,9 @@ namespace DemoCraftSpring2023
             Print($"I paid {price.ToString("c")} for this coffee");
             Print($"My name is {playerOne.Name}", playerOne);
             Print($"My name is {playerTwo.Name}", playerTwo);
+
+            Print(playerOne.ShowInventoryItems());
+            Print(playerTwo.ShowInventoryItems());
 
             Console.ReadKey();
 

@@ -9,5 +9,8 @@ namespace DemoCraftSpring2023
     {
         private string name;
         private double amount;
+
+        public string Name { get => name; set => name = value; }
+        public double Amount { get => amount; set => amount = value; }
     }
 }
