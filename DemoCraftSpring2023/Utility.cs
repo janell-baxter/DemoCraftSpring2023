@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 using System.IO;
-using System.Xml.Linq;
 
 namespace DemoCraftSpring2023
 {
@@ -54,20 +53,12 @@ namespace DemoCraftSpring2023
             if (File.Exists(path))
             {
                 string[] itemNames = File.ReadAllLines(path);
-
-                for(int i = 0; i<itemNames.Length-1; i++)
+                for(int i = 0; i<itemNames.Length; i+=2)
                 {
-                    Item item = new Item();
-                    item.Name = itemNames[i];
-                    double amount = 0;
-                    try
-                    {
-                        amount = Convert.ToDouble(itemNames[i + 1]);
-                    }
-                    finally { }
-                    item.Amount = amount;
-                    items.Add(item);
-                    i++;
+                   
+                    bool success = double.TryParse(itemNames[i+1], out double amount);
+                    items.Add(new Item() {Name = itemNames[i], Amount = amount  });
+                    
                 }
             }
             return items;
